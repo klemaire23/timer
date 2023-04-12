@@ -2,15 +2,8 @@ const args = process.argv.slice(2);
 
 for (let arg of args) {
 
-  if (arg.length === 0) {
-    return;
-
-  } else if (arg < 0) {
-    continue;
-
-  } else if (isNaN(arg) === true) {
-    continue;
-  }
+  if (arg.length === 0 || arg < 0 || isNaN(arg) === true) {
+    return;}
 
   setTimeout(() => {
     process.stdout.write('\x07');
